@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.MessageLock" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">#6200EE</item>
-        <item name="colorPrimaryDark">#3700B3</item>
-        <item name="colorAccent">#03DAC6</item>
+    <!--
+        TextInputLayout is a Material Components widget. Using an AppCompat-only
+        theme causes it to fail its runtime theme validation while MainActivity
+        is being inflated, which prevents the app from opening.
+    -->
+    <style name="Theme.MessageLock" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSurface">@color/background</item>
+        <item name="colorOnSurface">@color/black</item>
     </style>
 </resources>
