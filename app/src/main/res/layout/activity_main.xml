@@ -26,6 +26,7 @@
         android:layout_marginBottom="32dp"/>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilTrustedNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"

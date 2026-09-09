@@ -4,10 +4,10 @@ A secure messaging application built with Android (Kotlin) to lock and protect y
 
 ## Features
 
-- 🔒 Message encryption and security
-- 📱 Android native app
-- 🎯 User-friendly UI
-- 🚀 Fast and reliable
+- 📱 Android native app for configuring a trusted phone number
+- 💾 Trusted-number storage that persists across app restarts
+- ✅ Inline validation for empty submissions
+- 🎯 User-friendly Material UI
 
 ## Tech Stack
 
@@ -25,7 +25,7 @@ MessageLock/
 ├── app/
 │   ├── src/
 │   │   ├── main/
-│   │   │   ├── kotlin/com/messagelock/
+│   │   │   ├── java/com/messagelock/
 │   │   │   │   └── MainActivity.kt
 │   │   │   ├── res/
 │   │   │   │   ├── layout/
