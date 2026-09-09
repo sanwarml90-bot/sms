@@ -1,73 +1,32 @@
-# MessageLock - SMS Application
+# Message Lock
 
-A secure messaging application built with Android (Kotlin) to lock and protect your SMS messages.
+Message Lock is an Android security utility that accepts exact SMS commands only from its two configured trusted numbers. It has no network permission, cloud component, analytics, or tracking.
 
-## Features
+## Commands
 
-- 📱 Android native app for configuring a trusted phone number
-- 💾 Trusted-number storage that persists across app restarts
-- ✅ Inline validation for empty submissions
-- 🎯 User-friendly Material UI
+| Exact command (case-insensitive) | Result |
+| --- | --- |
+| `LOCK` | Immediately locks the phone after Device Admin is enabled. |
+| `FIND` | Starts a continuous foreground siren. |
+| `STOP` | Stops the siren. |
 
-## Tech Stack
+The app authorizes `7568324805` and `8112289897` only. SMS bodies must contain only the command (surrounding whitespace is allowed); sentences and typos are ignored.
 
-- **Language**: Kotlin
-- **Platform**: Android (API 24+)
-- **Build System**: Gradle
-- **UI Framework**: AndroidX & ConstraintLayout
-- **Minimum SDK**: 24
-- **Target SDK**: 34
+## Device setup
 
-## Project Structure
+1. Install the APK and open Message Lock.
+2. Grant SMS permission when prompted.
+3. Select **Set up Device Admin** and enable it. This is required for `LOCK`.
+4. Optional: allow notifications so the active siren foreground-service notification is visible.
 
-```
-MessageLock/
-├── app/
-│   ├── src/
-│   │   ├── main/
-│   │   │   ├── java/com/messagelock/
-│   │   │   │   └── MainActivity.kt
-│   │   │   ├── res/
-│   │   │   │   ├── layout/
-│   │   │   │   ├── values/
-│   │   │   │   └── mipmap/
-│   │   │   └── AndroidManifest.xml
-│   └── build.gradle.kts
-├── build.gradle.kts
-├── settings.gradle.kts
-└── gradle.properties
-```
+## Build
 
-## Getting Started
-
-### Prerequisites
-
-- Android Studio Arctic Fox or later
-- JDK 17 or higher
-- Gradle 8.4+
-
-### Building
+Requires JDK 17 and Android SDK 34:
 
 ```bash
-# Clone the repository
-git clone https://github.com/sanwarml90-bot/sms.git
-cd sms
-
-# Build debug APK
-gradle assembleDebug
-
-# Build release APK
-gradle assembleRelease
+gradle test lint assembleDebug
 ```
 
-## CI/CD
+The FIND siren is synthesized on-device at runtime, so the repository contains no binary audio asset.
 
-This project uses GitHub Actions for automated builds. The workflow automatically builds a debug APK on every push to `main` or `master` branch.
-
-## License
-
-This project is open source and available under the MIT License.
-
-## Author
-
-sanwarml90-bot
+The GitHub Actions workflow runs tests and lint, builds `app-debug.apk`, and uploads it as an artifact for each push and pull request.
