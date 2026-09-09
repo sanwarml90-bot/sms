@@ -5,7 +5,10 @@ import android.content.SharedPreferences
 
 class SharedPrefsHelper(context: Context) {
 
-    private val prefs: SharedPreferences = context.getSharedPreferences("MessageLockPrefs", Context.MODE_PRIVATE)
+    private val prefs: SharedPreferences = context.applicationContext.getSharedPreferences(
+        "MessageLockPrefs",
+        Context.MODE_PRIVATE
+    )
 
     companion object {
         private const val KEY_TRUSTED_NUMBER = "trusted_number"
