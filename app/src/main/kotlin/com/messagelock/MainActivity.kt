@@ -22,9 +22,6 @@ class MainActivity : AppCompatActivity() {
         etTrustedNumber = findViewById(R.id.etTrustedNumber)
         btnSaveNumber = findViewById(R.id.btnSaveNumber)
 
-        // Pehle se save kiya hua number dikhana
-        updateCurrentNumberDisplay()
-
         // Button click logic
         btnSaveNumber.setOnClickListener {
             val number = etTrustedNumber.text.toString().trim()
@@ -36,13 +33,6 @@ class MainActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Please enter a valid number", Toast.LENGTH_SHORT).show()
             }
-        }
-    }
-
-    private fun updateCurrentNumberDisplay() {
-        val currentText = tvCurrentNumber.text.toString()
-        if (currentText.isEmpty() || currentText == getString(R.string.no_number_set)) {
-            tvCurrentNumber.text = getString(R.string.no_number_set)
         }
     }
 }
