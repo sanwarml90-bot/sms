@@ -1,10 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Message Lock</string>
-    <string name="trusted_number_hint">Enter Trusted Phone Number</string>
-    <string name="save_number_btn">Save Number</string>
-    <string name="number_saved_msg">Trusted number saved successfully!</string>
-    <string name="empty_number_error">Please enter a valid number</string>
-    <string name="current_number_label">Current Trusted Number:</string>
-    <string name="no_number_set">Not Set</string>
+    <string name="app_summary">SMS security controls for your own phone. Only the configured trusted numbers can send exact LOCK, FIND, or STOP commands.</string>
+    <string name="trusted_numbers_title">Trusted phone numbers</string>
+    <string name="status_title">Security status</string>
+    <string name="monitoring_active">SMS monitoring: active</string>
+    <string name="monitoring_permission_needed">SMS monitoring: permission required</string>
+    <string name="lock_ready">Remote lock: ready</string>
+    <string name="lock_not_ready">Remote lock: Device Admin setup required</string>
+    <string name="siren_active">Siren: active</string>
+    <string name="siren_stopped">Siren: stopped</string>
+    <string name="device_admin_button">Set up Device Admin</string>
+    <string name="test_lock_button">Test Lock</string>
+    <string name="test_siren_button">Test Siren</string>
+    <string name="stop_siren_button">Stop Siren</string>
+    <string name="device_admin_label">Message Lock</string>
+    <string name="device_admin_description">Lets Message Lock immediately lock this device when an authorized SMS LOCK command is received.</string>
+    <string name="device_admin_explanation">Enable Device Admin to allow authorized LOCK commands to secure this phone.</string>
+    <string name="device_admin_required">Set up Device Admin before testing remote lock.</string>
+    <string name="siren_channel_name">Active security siren</string>
+    <string name="siren_notification_title">Message Lock siren is active</string>
+    <string name="siren_notification_text">An authorized FIND command started the siren.</string>
 </resources>
